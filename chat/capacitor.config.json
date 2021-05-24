@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.chat",
+  "appName": "chat",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {},
+  "cordova": {}
+}

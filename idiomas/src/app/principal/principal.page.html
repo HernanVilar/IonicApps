@@ -1,0 +1,145 @@
+ <ion-header class="g">
+  <div class="d-flex justify-content-between">
+    <div>
+      <ion-fab horizontal="bottom" horizontal="start" edge slot="fixed">
+        <ion-fab-button>
+            <img src="../../assets/inglaterra.jpg" class="total" *ngIf = "data1 == true" alt="">
+            <img src="../../assets/bra.jpg" class="total" *ngIf = "data2 == true"  alt="">
+            <img src="../../assets/españa.jpg" class="total" *ngIf="data3 == true" alt="">                              
+        </ion-fab-button>
+        <ion-fab-list side="button">
+          <ion-fab-button *ngIf = "!data3 == true">
+            <img src="../../assets/españa.jpg" class="total" (click) = "ejecutar('esp')" alt="">
+          </ion-fab-button>
+          <ion-fab-button *ngIf = "!data2 == true">
+            <img src="../../assets/bra.jpg " class="total" (click) =  "ejecutar('bra')" alt="">
+          </ion-fab-button>
+          <ion-fab-button *ngIf = "!data1 == true">
+            <img src="../../assets/inglaterra.jpg" class="total" (click) = "ejecutar('ingla')" alt="">
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  <div class="padingcostadoderecho">
+    <ion-fab horizontal="bottom" vertical="start" edge slot="fixed">
+      <ion-fab-button>
+          <img src="../../assets/imagengeneral/animales.jpg" class="total" *ngIf = "data4 == true" alt="">
+          <img src="../../assets/imagengeneral/coloresanimados.jpg" class="total" *ngIf = "data5 == true"  alt="">
+          <img src="../../assets/imagengeneral/numeros.jpg" class="total" *ngIf="data6 == true" alt="">                              
+      </ion-fab-button>
+      <ion-fab-list side="button">
+        <ion-fab-button *ngIf = "!data4 == true">
+          <img src="../../assets/imagengeneral/animales.jpg"  class="total" (click) = "ejecutar2('animal')" alt="">
+        </ion-fab-button>
+        <ion-fab-button *ngIf = "!data5 == true">
+          <img src="../../assets/imagengeneral/coloresanimados.jpg" class="total" (click) =  "ejecutar2('color')" alt="">
+        </ion-fab-button>
+        <ion-fab-button *ngIf = "!data6 == true">
+          <img src="../../assets/imagengeneral/numeros.jpg" class="total" (click) = "ejecutar2('numero')" alt="">
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div *ngIf = "data5 == true"  class="container">
+    <div class="row">
+      <div (click) = "colores('azul')" class="col-6   colores bg-primary">
+      </div>
+      <div (click) = "colores('amarillo')" class="col-6 colores bg-warning">
+      </div>
+    </div>
+    <div class="row">
+      <div (click) = "colores('rojo')" class="col-6 colores bg-danger">
+      </div>
+      <div (click) = "colores('verde')" class="col-6 colores bg-success">
+      </div>
+  </div>
+  <div class="row">
+    <div (click) = "colores('celeste')" class="col-6 colores bg-info">
+     </div>
+     <div (click) = "colores('gris')" class="col-6 colores bg-secondary">
+     </div>
+  </div>
+  </div>
+
+
+
+  <div *ngIf = "data6  == true" class="container">
+    <div class="row">
+      <div class="col-6  coloress">
+          <img src="../../assets/imagennumero/numero1.svg" (click) = "numeros('uno')" alt="aca" class="imagen">
+      </div>
+      <div class="col-6 coloress">
+          <img src="../../assets/imagennumero/numero2.svg" (click) = "numeros('dos')" alt="" class="imagen">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 coloress">
+        <img src="../../assets/imagennumero/numero3.svg" (click) = "numeros('tres')" alt="" class="imagen tres">
+      </div>
+      <div class="col-6 coloress">
+        <img src="../../assets/imagennumero/numero4.svg" (click) = "numeros('cuatro')" alt="" class="imagen cuatro">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-6 coloress">
+      <img src="../../assets/imagennumero/numero5.svg" (click) = "numeros('cinco')" alt="" class="imagenn">
+     </div>
+     <div class="col-6 coloress">
+      <img src="../../assets/imagennumero/numero6.svg" (click) = "numeros('seis')" alt="" class="imagen seis">
+     </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div *ngIf = "data4 == true" class="container">
+    <div class="row">
+      <div class="col-6  coloress">
+          <img src="../../assets/imagenanimales/perro.jpg" (click) = "animales('perro')" alt="aca" class="imagennn">
+      </div>
+      <div class="col-6 coloress">
+        <img src="../../assets/imagenanimales/gato.jpg" (click) = "animales('gato')" alt="aca" class="imagennn">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 coloress">
+        <img src="../../assets/imagenanimales/jirafa.jpg" (click) = "animales('jirafa')" alt="aca" class="imagennn">
+      </div>
+      <div class="col-6 coloress">
+        <img src="../../assets/imagenanimales/tigre.jpg" (click) = "animales('tigre')" alt="aca" class="imagennn">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-6 coloress">
+      <img src="../../assets/imagenanimales/leon.jpg" (click) = "animales('leon')" alt="aca" class="imagennn">
+     </div>
+     <div class="col-6 coloress">
+      <img src="../../assets/imagenanimales/conejo.jpg" (click) = "animales('conejo')" alt="aca" class="imagennn">
+     </div>
+  </div>
+  </div>
+</ion-content>
+
+<!-- 
+  <ion-fab horizontal="end" horizontal="end" [hidden] = "routerHidden">
+  <ion-fab-button color="primary">
+    <ion-icon size = "large" [src] = "idiomasteado"></ion-icon>
+    <ion-icon name="add">e</ion-icon>
+  </ion-fab-button>
+</ion-fab> -->
+
+<!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="arrow-back-circle"></ion-icon>
+  </ion-fab-button>
+</ion-fab> -->
+

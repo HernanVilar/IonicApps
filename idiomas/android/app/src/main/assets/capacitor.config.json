@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.idiomas",
+  "appName": "idiomas",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {},
+  "cordova": {}
+}

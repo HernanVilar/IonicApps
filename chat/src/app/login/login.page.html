@@ -1,0 +1,41 @@
+<ion-content>
+  <label for="">Seleccione una opcion</label>
+  <select class="esa" [(ngModel)]="email" (change) = "cambio()">
+    <option value="admin@test.com" selected>
+      admin@test.com
+    </option>
+    <option value="invitado@test.com">
+      invitado@test.com
+    </option>
+    <option value="usuario@test.com">
+      usuario@test.com
+    </option>
+    <option value="anonimo@test.com">
+      anonimo@test.com
+    </option>
+    <option value="correo@test.com">
+      Correo
+    </option>
+  </select>
+    <img src="../../assets/icon/chats.jpg" alt="">
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="text"[(ngModel)] = "email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="text"[(ngModel)] = "password" name="password"></ion-input>
+  </ion-item>
+  <ion-button class="agrandar" (click)="OnSubmitLogin()" expand="block">Ingresar</ion-button>
+  <ngx-spinner *ngIf="this.spn"
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+  <div>
+    
+  </div>
+</ngx-spinner>
+      </ion-content>

@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <img class="a123" src="../../assets/immmmmmm123123123.jpg" alt="">
+    <ion-fab horizontal="bottom" horizontal="start" edge slot="fixed">
+      <ion-fab-button>           
+        <img class="agrandar" src="../../assets/usuu.jpg" alt="">               
+      </ion-fab-button>
+      <ion-fab-list side="button">
+        <ion-fab-button class="arturo"(click) = "setiar('Admin@test.com','123456')">
+          <p class="centrar">Admin</p>
+        </ion-fab-button>
+        <ion-fab-button class="arturo"(click) = "setiar('invitado@test.com','123456')">
+          <p class="centrar">Invitado</p>
+        </ion-fab-button>
+        <ion-fab-button class="arturo"(click) = "setiar('Usuario@test.com','123456')">
+          <p class="centrar">Usuario</p>
+        </ion-fab-button>
+        <ion-fab-button class="arturo"(click) = "setiar('Anonimo@test.com','123456')">
+          <p class="centrar">Anonimo</p>
+        </ion-fab-button>
+        <ion-fab-button class="arturo"(click) = "setiar('Correo@test.com','123456')">
+          <p class="centrar">Correo</p>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="text"[(ngModel)] = "email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="text"[(ngModel)] = "password" name="password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button class="ag" (click)="OnSubmitLogin()" expand="block">Ingresar</ion-button>
+</ion-content> 
+<ngx-spinner *ngIf = "spn"
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

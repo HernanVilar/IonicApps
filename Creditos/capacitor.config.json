@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.creditos",
+  "appName": "Creditos",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {},
+  "cordova": {}
+}

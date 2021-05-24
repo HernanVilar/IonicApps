@@ -1,0 +1,8 @@
+{
+  "name": "idiomas",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

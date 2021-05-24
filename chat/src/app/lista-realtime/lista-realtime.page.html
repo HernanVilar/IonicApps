@@ -1,0 +1,16 @@
+<ion-list>
+  <div  class="list-group-item"
+  *ngFor="let mensaje of listadoMensajes; let i = index"
+  [class.active]="i == currentIndex" >
+  <ion-list class="movedora2" *ngIf = "mensaje.email == ''">
+  {{mensaje.mensaje}}
+  <br>
+   {{ mensaje.fecha }}  
+</ion-list>
+ <ion-list class="movedora" *ngIf = "mensaje.email != ''">
+  {{mensaje.email}} : {{mensaje.mensaje}}
+  <br>
+   {{ mensaje.fecha }}  
+</ion-list> 
+</div>
+</ion-list>

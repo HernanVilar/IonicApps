@@ -1,0 +1,56 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+.chico
+  {
+      height: 200px;
+      width: 200px;
+      background-color: coral;
+  }
+
+#container a {
+  text-decoration: none;
+}
+.agrandar
+{
+  width: 100%;
+  height: 350px;
+}
+.d
+{
+  background-color: black;
+}
+.con
+{
+  background-color: burlywood;
+}
+.c
+{
+  width: 110px
+}
+.tamaño
+{
+  height: 33.3vh;
+  width: 100%;
+  border: black solid 2px;
+}

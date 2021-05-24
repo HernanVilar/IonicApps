@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.alarma",
+  "appName": "alarma",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {},
+  "cordova": {}
+}
