@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-card>
+  <ion-button color="danger" (click)="scanBRcode()" expand="block">
+      Scan Barcode
+  </ion-button>
+</ion-card>
+<ion-content>
+    <ion-item *ngIf="creditoAux">{{creditoAux.email}} </ion-item>
+    <ion-item *ngIf="creditoAux"> Credito Cargado {{creditoAux.credito}} </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
+
+<ion-card>
+  <div *ngIf="scannedBarCode">
+    <ion-item>
+      Scanned code output: <strong>{{ credito}}</strong>
+  </ion-item>
+      <ion-item>
+          Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
+      </ion-item>
+      <ion-item>
+          Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
+      </ion-item>
+  </div>
+</ion-card>
