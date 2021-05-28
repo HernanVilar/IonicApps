@@ -1,24 +1,11 @@
 <ion-card>
-  <ion-button color="danger" (click)="scanBRcode()" expand="block">
-      Scan Barcode
-  </ion-button>
 </ion-card>
 <ion-content>
-    <ion-item *ngIf="creditoAux">{{creditoAux.email}} </ion-item>
-    <ion-item *ngIf="creditoAux"> Credito Cargado {{creditoAux.credito}} </ion-item>
-
+    <ion-item *ngIf="creditoAux"> Usuario: {{creditoAux.email}} </ion-item>
+    <ion-item class="ce" *ngIf="creditoAux"> Credito actualmente</ion-item>
+    <ion-item class="c" *ngIf="creditoAux">{{creditoAux.credito}}</ion-item>
+    <ion-button color="danger" (click)="scanBRcode()" expand="block" class="clas">
+      Scan Barcode
+    </ion-button>
+    <button class="o" (click) = "borrarCredito()">LIMPIAR</button>
 </ion-content>
-
-<ion-card>
-  <div *ngIf="scannedBarCode">
-    <ion-item>
-      Scanned code output: <strong>{{ credito}}</strong>
-  </ion-item>
-      <ion-item>
-          Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
-      </ion-item>
-      <ion-item>
-          Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
-      </ion-item>
-  </div>
-</ion-card>

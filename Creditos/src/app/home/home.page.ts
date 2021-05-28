@@ -3,6 +3,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from "@ionic-native/barcode-sca
 import { Credito } from '../clases/credito';
 import {CreditosService} from '../service/creditos.service';
 import { ContadorService } from '../service/contador.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class HomePage {
   nuevoCredito:Credito;
   id:string;
   constructor(private scanner: BarcodeScanner, private creditoService:CreditosService,private contador:ContadorService) {
+    this.usuarioLogeado = localStorage.getItem("usuario");
     this.getAll();
     this.verificaradmin();
     this.encodedData = "Programming isn't about what you know";
@@ -28,8 +30,6 @@ export class HomePage {
         showTorchButton: true,
         showFlipCameraButton: true
       };
-      localStorage.setItem("usuario","admin@test.com");
-      this.usuarioLogeado = localStorage.getItem("usuario");
   }
   scanBRcode() {
     this.scanner.scan().then(res => {
@@ -45,15 +45,12 @@ export class HomePage {
     switch (codigo) {
       case "8c95def646b6127282ed50454b73240300dccabc":
         this.credito = 10;
-        alert("10");
       break;
       case "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ":
         this.credito = 50;
-        alert("50");
       break;
       case "2786f4877b9091dcad7f35751bfcf5d5ea712b2f":
         this.credito = 100;
-        alert("100");
       break;
       default:
         break;
@@ -77,6 +74,7 @@ export class HomePage {
   borrarCredito()
   {
     this.creditoService.delete(this.id);
+    this.creditoAux = null;
   }
   cargarCredito()
   {
@@ -94,7 +92,11 @@ export class HomePage {
                 }
                 else
                 {
-                  alert("Error, es admin pero ya uso 2 veces el codigo.");
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR!!',
+                    text: 'Error, es admin pero ya uso 2 veces el codigo.',
+                  })
                 }
               }
               if(this.scannedBarCode["text"] == "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ")
@@ -105,7 +107,11 @@ export class HomePage {
                 }
                 else
                 {
-                  alert("Error, es admin pero ya uso 2 veces el codigo.");
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR!!',
+                    text: 'Error, es admin pero ya uso 2 veces el codigo.',
+                  })
                 }
               }
               if(this.scannedBarCode["text"] == "2786f4877b9091dcad7f35751bfcf5d5ea712b2f")
@@ -116,7 +122,11 @@ export class HomePage {
                 }
                 else
                 {
-                  alert("Error, es admin pero ya uso 2 veces el codigo.");
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR!!',
+                    text: 'Error, es admin pero ya uso 2 veces el codigo.',
+                  })
                 }
               }
         }
@@ -132,7 +142,13 @@ export class HomePage {
         this.nuevoCredito.email = this.usuarioLogeado;
         this.nuevoCredito.credito += this.credito;
         this.creditoService.create(this.nuevoCredito);
-        alert("Se realizó el alta");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Se agregó correctamente!!!',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     }
   }
@@ -145,18 +161,21 @@ export class HomePage {
       {
         if(credito.email == this.usuarioLogeado)
         {
+          this.contador.contador1 = 0;
+          this.contador.contador2 = 0;
+          this.contador.contador3 = 0;
           for (var cr of credito.codigo) {
               if(cr== "8c95def646b6127282ed50454b73240300dccabc")
               {
-                this.contador.contador1 = this.contador.contador1 + (1/2);
+                this.contador.contador1++;
               } 
               if(cr == "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ")
               {
-                this.contador.contador2 = this.contador.contador2 +  (1/2);
+                this.contador.contador2++;
               }
               if(cr== "2786f4877b9091dcad7f35751bfcf5d5ea712b2f")
               {
-                this.contador.contador3 =  this.contador.contador3 + (1/2);
+                this.contador.contador3++;
               }
           }
           
@@ -169,7 +188,11 @@ export class HomePage {
   {
     if(this.creditoAux.codigo.includes(this.scannedBarCode["text"]) )
           {
-            alert("El codigo ya está cargado!!");
+            Swal.fire({
+              icon: 'error',
+              title: 'ERROR!!',
+              text: 'El codigo ya está usado!!',
+            })
           }
         else
         {
@@ -177,7 +200,13 @@ export class HomePage {
          this.creditoAux.credito += this.credito;
          this.creditoAux.codigo.push(this.scannedBarCode["text"]);
          this.creditoService.update(this.id,this.creditoAux);
-         alert("Se realizó la modificacion");
+         Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'MODIFICACIÓN EXITOSA',
+          showConfirmButton: false,
+          timer: 1500
+        })
         }
   }
   funcionllamar2()
@@ -185,7 +214,13 @@ export class HomePage {
          this.creditoAux.credito += this.credito;
          this.creditoAux.codigo.push(this.scannedBarCode["text"]);
          this.creditoService.update(this.id,this.creditoAux);
-         alert("Se realizó la modificacion");
+         Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'MODIFICACIÓN EXITOSA',
+          showConfirmButton: false,
+          timer: 1500
+        })
          this.contador.contador1 = 0;
          this.contador.contador2 = 0;
          this.contador.contador3 = 0;

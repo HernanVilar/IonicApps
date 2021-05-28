@@ -1,0 +1,46 @@
+
+
+
+<div class="d">
+ <p>Carga de crédito.</p>   
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <button ion-fab mini><ion-icon name="add">hola</ion-icon></button>
+    </ion-fab-button>
+    <ion-fab-list side="top" class="costadoarriba">
+      <button (click) = "setiar('Admin@test.com','123456')" >Admin</button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom" class="costadoabajo">
+      <button (click) = "setiar('invitado@test.com','123456')" >Invitado</button>
+    </ion-fab-list>
+    <ion-fab-list side="start" class="costadoizquierdo">
+      <button (click) = "setiar('Usuario@test.com','123456')" >Usuario</button>
+    </ion-fab-list>
+    <ion-fab-list side="end" class="costadoderecho">
+      <button (click) = "setiar('Anonimo@test.com','123456')">Anonimo</button>
+    </ion-fab-list>
+  </ion-fab>
+</div>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="text"[(ngModel)] = "email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="text"[(ngModel)] = "password" name="password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button class="ag" (click)="OnSubmitLogin()" expand="block">Ingresar</ion-button>
+</ion-content> 
+<ngx-spinner *ngIf = "spn"
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+  
+
