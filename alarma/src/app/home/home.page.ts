@@ -89,6 +89,14 @@ export class HomePage {
          {
            if(this.revisar)
            {
+            const sound = new Howl({
+              src: ['../../assets/audios/colores/rojo.mp3']
+       
+            });
+           
+            sound.play();
+           
+            Howler.volume(1.5);
             this.vibration.vibrate(5000);
             this.revisar = false;
             setTimeout(() => {

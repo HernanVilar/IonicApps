@@ -4,6 +4,8 @@ import { Credito } from '../clases/credito';
 import {CreditosService} from '../service/creditos.service';
 import { ContadorService } from '../service/contador.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -21,7 +23,7 @@ export class HomePage {
   usuarioLogeado:string;
   nuevoCredito:Credito;
   id:string;
-  constructor(private scanner: BarcodeScanner, private creditoService:CreditosService,private contador:ContadorService) {
+  constructor(private router:Router,private scanner: BarcodeScanner, private creditoService:CreditosService,private contador:ContadorService) {
     this.usuarioLogeado = localStorage.getItem("usuario");
     this.getAll();
     this.verificaradmin();
@@ -224,6 +226,11 @@ export class HomePage {
          this.contador.contador1 = 0;
          this.contador.contador2 = 0;
          this.contador.contador3 = 0;
+  }
+  cambiartodo()
+  {
+    this.router.navigate(['login']);
+    this.creditoAux = null;
   }
 
 

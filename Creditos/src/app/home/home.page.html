@@ -1,11 +1,12 @@
 <ion-card>
 </ion-card>
 <ion-content>
-    <ion-item *ngIf="creditoAux"> Usuario: {{creditoAux.email}} </ion-item>
-    <ion-item class="ce" *ngIf="creditoAux"> Credito actualmente</ion-item>
+    <ion-item class="d" *ngIf="creditoAux"> Usuario: {{creditoAux.email}} </ion-item>
+    <button (click) = "cambiartodo()"  class="de btn btn-danger">SALIR</button>
+    <ion-item class="ce" *ngIf="creditoAux">Crédito actualmente</ion-item>
     <ion-item class="c" *ngIf="creditoAux">{{creditoAux.credito}}</ion-item>
     <ion-button color="danger" (click)="scanBRcode()" expand="block" class="clas">
       Scan Barcode
     </ion-button>
-    <button class="o" (click) = "borrarCredito()">LIMPIAR</button>
+    <button class="o btn btn-warning" (click) = "borrarCredito()">LIMPIAR</button>
 </ion-content>

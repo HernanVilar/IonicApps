@@ -31,7 +31,7 @@
 }
 .ce
 {
-  font-size: 40px;
+  font-size: 35px;
   border: skyblue solid 5px;
 }
 .c
@@ -43,7 +43,18 @@
 }
 .o
 {
-  height: 100px;
+  height: 50px;
   display: block;
   width: 100%;
+}
+.d
+{
+  display: inline-block;
+  width: 75%;
+}
+.de
+{
+  display: inline-block;
+  height: 40px;
+  margin-bottom: 30px;
 }
